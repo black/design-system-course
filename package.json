@@ -1,0 +1,14 @@
+{
+  "name": "design-systems-course",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
+    "build": "npm run build:css && node scripts/build.js",
+    "watch": "tailwindcss -i ./css/input.css -o ./css/styles.css --watch",
+    "preview": "npm run build && firebase emulators:start --only hosting",
+    "deploy": "firebase deploy --only hosting"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

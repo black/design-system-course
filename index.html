@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design Systems Course</title>
+<meta name="description" content="A Design Systems course in Figma, from beginner to pro, created by Abhinav.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300..400,0..1,0&icon_names=arrow_back,arrow_forward,arrow_outward,check,check_circle,chevron_right,dark_mode,light_mode,lock,play_arrow&display=block">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/theme.js"></script>
+<script src="js/course-data.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+
+<header class="sticky top-0 z-10 bg-paper">
+  <div class="wrap flex items-center justify-between gap-6 py-5">
+    <a class="flex items-center gap-3 whitespace-nowrap text-[15px] font-medium" href="#top">
+      <svg width="24" height="24" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="20" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="1" y="15" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="15" y="15" width="10" height="10" class="fill-blue"/>
+      </svg>
+      Design Systems 101
+    </a>
+    <div class="flex items-center gap-8">
+    <nav class="hidden gap-8 text-sm sm:flex" aria-label="Sections">
+      <a class="hover:text-blue" href="#path">Learning path</a>
+      <a class="hover:text-blue" href="#modules">Modules</a>
+      <a class="hover:text-blue" href="#practice">Practice</a>
+      <a class="hover:text-blue" href="#material">Study material</a>
+      <a class="hover:text-blue" href="#concepts">Concepts</a>
+    </nav>
+    <button type="button" id="theme-toggle" class="grid h-9 w-9 flex-none place-items-center rounded-md border border-line transition-colors hover:border-ink" aria-label="Switch to dark mode" aria-pressed="false">
+      <span class="icon text-[18px] dark:hidden" aria-hidden="true">dark_mode</span>
+      <span class="icon hidden text-[18px] dark:inline-block" aria-hidden="true">light_mode</span>
+    </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section>
+    <div class="wrap grid justify-items-start gap-4 pb-10 pt-8 sm:gap-5 sm:pb-14 sm:pt-10">
+      <h1 class="text-[clamp(44px,7vw,104px)] leading-none tracking-[-0.05em]">Design Systems <span class="text-blue">Course</span></h1>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+        <span class="rounded-md bg-blue-soft px-3.5 py-1.5 text-blue" id="hero-level">Beginner</span>
+        <span class="text-muted">Created by <strong class="font-medium text-ink">Abhinav</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning path -->
+  <section class="bg-night text-white" id="path">
+    <div class="wrap grid gap-3 pb-9 pt-8 sm:gap-5 sm:pb-11 sm:pt-10">
+      <p class="eyebrow text-night-muted">Learning path</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 sm:gap-6" id="track"></div>
+      <p class="hidden text-sm text-night-muted" id="lock-note" role="status"></p>
+
+      <!-- Progress code: carry progress to another device without an account -->
+      <details class="group text-sm" id="sync">
+        <summary class="inline-flex cursor-pointer list-none items-center gap-2 font-mono text-xs tracking-[.02em] text-night-muted hover:text-white [&::-webkit-details-marker]:hidden">
+          Continue on another device <span class="icon text-[16px] transition-transform group-open:rotate-90" aria-hidden="true">chevron_right</span>
+        </summary>
+        <div class="mt-4 grid gap-6 border-t border-night-line pt-5 sm:grid-cols-2 sm:gap-10">
+          <div class="grid content-start gap-2">
+            <p class="text-night-muted">Your progress code</p>
+            <div class="flex items-center gap-2">
+              <code class="select-all rounded-md border border-night-line px-3 py-2 font-mono text-base tracking-[.08em] text-white" id="sync-code">DS-0</code>
+              <button type="button" class="rounded-md border border-night-line px-3 py-2 text-white hover:border-white" id="sync-copy">Copy</button>
+            </div>
+            <p class="text-xs text-night-muted">Keep this code, or enter it on another device or browser. No account needed.</p>
+          </div>
+          <form class="grid content-start gap-2" id="sync-form" autocomplete="off">
+            <label class="text-night-muted" for="sync-input">Have a code from another device?</label>
+            <div class="flex gap-2">
+              <input class="w-full min-w-0 rounded-md border border-night-line bg-transparent px-3 py-2 font-mono uppercase tracking-[.08em] text-white placeholder:normal-case placeholder:tracking-normal placeholder:text-night-muted focus:border-white focus:outline-none" id="sync-input" placeholder="e.g. DS-1EKF" spellcheck="false">
+              <button type="submit" class="flex-none rounded-md bg-blue px-4 py-2 text-white hover:opacity-90">Restore</button>
+            </div>
+            <p class="min-h-[1rem] text-xs text-night-muted" id="sync-status" role="status"></p>
+          </form>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Modules: index on the left, one lesson on the right -->
+  <section id="modules">
+    <div class="wrap py-[72px] sm:pb-[120px] sm:pt-[104px]">
+      <div class="grid scroll-mt-[88px] grid-cols-1 items-start gap-8 md:grid-cols-[300px_minmax(0,1fr)] md:gap-16" id="player">
+        <nav class="no-scrollbar flex gap-2 overflow-x-auto border-t border-ink pb-1 pt-4 md:sticky md:top-[88px] md:block md:max-h-[calc(100vh-104px)] md:overflow-y-auto md:pt-2" id="index" aria-label="Modules"></nav>
+        <article class="grid min-w-0 gap-12" id="lesson" aria-live="polite"></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice -->
+  <section class="border-t border-line" id="practice">
+    <div class="wrap grid gap-8 py-[72px] sm:py-[88px]">
+      <div class="flex flex-wrap items-end justify-between gap-x-12 gap-y-3">
+        <h2 class="text-[clamp(30px,3.6vw,48px)] leading-[1.08] tracking-[-0.035em]" id="practice-title">Practice exercises</h2>
+        <p class="max-w-[44ch] text-[15px] text-muted">Hands-on tasks in Figma for this level. Each one adds a piece to your final project.</p>
+      </div>
+      <ol class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-4" id="practice-list"></ol>
+      <div class="hidden grid-cols-1 gap-8 rounded-md bg-night p-6 text-white data-[show=true]:grid sm:p-10 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-12" id="final">
+        <div class="grid content-start gap-4">
+          <p class="eyebrow text-night-muted">Final project</p>
+          <h3 class="max-w-[18ch] text-[clamp(28px,3vw,40px)] leading-[1.1] tracking-[-0.03em]">Build a small Design System for a sample application.</h3>
+          <p class="max-w-[40ch] text-night-muted">Bring your exercises together into one Figma file that a team could use.</p>
+        </div>
+        <div class="grid content-start gap-3">
+          <p class="eyebrow text-night-muted">It should include</p>
+          <ul class="text-[15px] [&>li]:flex [&>li]:items-center [&>li]:gap-2.5 [&>li]:border-b [&>li]:border-night-line [&>li]:py-2.5">
+            <li><span class="icon text-[18px] text-blue" aria-hidden="true">check</span>Colour and type styles</li>
+            <li><span class="icon text-[18px] text-blue" aria-hidden="true">check</span>Primitive and semantic tokens</li>
+            <li><span class="icon text-[18px] text-blue" aria-hidden="true">check</span>Buttons, inputs, badges and cards</li>
+            <li><span class="icon text-[18px] text-blue" aria-hidden="true">check</span>Variants and states</li>
+            <li><span class="icon text-[18px] text-blue" aria-hidden="true">check</span>Responsive Auto Layout</li>
+            <li><span class="icon text-[18px] text-blue" aria-hidden="true">check</span>Light and dark themes</li>
+            <li><span class="icon text-[18px] text-blue" aria-hidden="true">check</span>Usage documentation</li>
+            <li><span class="icon text-[18px] text-blue" aria-hidden="true">check</span>Pro: a second brand and AI-ready descriptions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Study material -->
+  <section class="border-t border-line" id="material">
+    <div class="wrap grid gap-8 py-[72px] sm:py-[88px]">
+      <div class="flex flex-wrap items-end justify-between gap-x-12 gap-y-3">
+        <h2 class="text-[clamp(30px,3.6vw,48px)] leading-[1.08] tracking-[-0.035em]">Study material</h2>
+        <div class="grid max-w-[44ch] justify-items-start gap-2">
+          <p class="text-[15px] text-muted" id="material-intro">Reading for this level.</p>
+          <a class="text-sm hover:text-blue" href="materials.html">All study material, every level <span class="icon text-[16px]" aria-hidden="true">arrow_forward</span></a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-3" id="material-list"></div>
+    </div>
+  </section>
+
+  <!-- Concepts -->
+  <section class="border-t border-line" id="concepts">
+    <div class="wrap grid gap-12 py-[72px] sm:py-[104px]">
+      <div class="grid grid-cols-1 items-baseline gap-8 md:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
+        <p class="eyebrow">Good to know</p>
+        <h2 class="max-w-[22ch] text-[clamp(30px,3.6vw,48px)] leading-[1.08] tracking-[-0.035em]">Ideas you'll meet along the way.</h2>
+      </div>
+      <div class="border-t border-ink" id="concept-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-line">
+  <div class="wrap flex flex-wrap items-center justify-between gap-4 pb-10 pt-8 text-sm">
+    <span>Design Systems Course</span>
+    <span class="font-mono text-xs tracking-[.02em] text-muted">Version 1.0</span>
+  </div>
+</footer>
+
+</body>
+</html>
