@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design Systems Study Material</title>
+<meta name="description" content="Books, blogs, articles, source material and case studies for the Design Systems Course, at every level.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&family=Geist+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300..400,0..1,0&icon_names=arrow_back,arrow_forward,arrow_outward,check,check_circle,chevron_right,dark_mode,light_mode,lock,play_arrow&display=block">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/theme.js"></script>
+<script src="js/course-data.js" defer></script>
+<script src="js/materials-page.js" defer></script>
+</head>
+<body>
+
+<header class="sticky top-0 z-10 bg-paper">
+  <div class="wrap flex items-center justify-between gap-4 py-5">
+    <a class="flex items-center gap-3 whitespace-nowrap text-[15px] font-medium" href="index.html" aria-label="Design Systems 101, back to the course">
+      <svg width="24" height="24" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="20" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="1" y="15" width="10" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="15" y="15" width="10" height="10" class="fill-blue"/>
+      </svg>
+      <span class="max-[379px]:hidden">Design Systems 101</span>
+    </a>
+    <div class="flex items-center gap-3 sm:gap-6">
+      <a class="whitespace-nowrap text-sm hover:text-blue" href="index.html"><span class="icon text-[16px]" aria-hidden="true">arrow_back</span> <span class="hidden sm:inline">Back to course</span><span class="sm:hidden">Course</span></a>
+      <button type="button" id="theme-toggle" class="grid h-9 w-9 flex-none place-items-center rounded-md border border-line transition-colors hover:border-ink" aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="icon text-[18px] dark:hidden" aria-hidden="true">dark_mode</span>
+        <span class="icon hidden text-[18px] dark:inline-block" aria-hidden="true">light_mode</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap grid justify-items-start gap-4 pb-8 pt-8 sm:gap-5 sm:pb-10 sm:pt-10">
+      <h1 class="text-[clamp(40px,6vw,88px)] leading-none tracking-[-0.05em]">Study <span class="text-blue">material</span></h1>
+      <p class="max-w-[52ch] text-muted">Every book, blog, article, source and case study from the course, at every level. Each link opens in a new tab.</p>
+    </div>
+  </section>
+
+  <section class="border-t border-line">
+    <div class="wrap grid gap-10 pb-[88px] pt-8">
+      <div class="flex flex-wrap gap-2" id="level-filter" role="group" aria-label="Filter by level"></div>
+      <div class="grid gap-12" id="all-material"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-line">
+  <div class="wrap flex flex-wrap items-center justify-between gap-4 pb-10 pt-8 text-sm">
+    <span>Design Systems Course</span>
+    <span class="font-mono text-xs tracking-[.02em] text-muted">Version 1.0</span>
+  </div>
+</footer>
+
+</body>
+</html>
